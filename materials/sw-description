@@ -1,0 +1,49 @@
+software =
+{
+            version = "0.1.0";
+            hardware-compatibility = [ "0.1", "1.2", "1.3"]; 
+            files: (
+                {
+                    filename = "EDB21NTA1.tar.gz"; 
+                    path = "/home/eduarts/swupdate_binary/EDB21NTA1.tar.gz"; 
+                    properties = {create-destination="true";}
+                    sha256 = "1f8d372d3162a4aa1eff4f843329815fbd1c4ba7255306bdf54eea19cabb8762"; 
+                },
+                {
+                    filename = "update.sh";
+                    path = "/home/eduarts/swupdate_binary/update.sh";
+                    properties = {create-destination="true";}
+                    sha256 = "c8e2b74ef033ea85653005782383b741149e4a4d35df1fbf9c7cdfa10d426efc"; 
+                },
+                {
+                    filename = "system_update_fhd.mp4";
+                    path = "/home/eduarts/swupdate_binary/system_update_fhd.mp4";
+                    properties = {create-destination="true";}
+                    sha256 = "9903e5cb7c9527f5c6baa9fd1ebe6cf4fd06b8052b57c2a29dd35c7c8e74450c"; 
+                },
+                {
+                    filename = "run_EDUARTS.sh";
+                    path = "/home/eduarts/swupdate_binary/run_EDUARTS.sh";
+                    properties = {create-destination="true";}
+                    sha256 = "da5cd53c7229f73e9a88f835cb3e9e886800c97b756b6d99e3d8f7596e58b14b"; 
+                },
+                {
+                    filename = "show";
+                    path = "/home/eduarts/swupdate_binary/show";
+                    properties = {create-destination="true";}
+                    sha256 = "f0d9d2e1b498994ebd9264606949376bae83fee2b8013ecd831cd422f45086ae"; 
+                }
+            );
+            scripts: (
+                {
+                    filename = "pre-install.sh";
+                    type = "preinstall";
+                    sha256 = "819e3fd57014c1f88a2908661cd3407f0c44458b36f60058ec3c56aa8fa44a19"; 
+                },
+                {
+                    filename = "post-install.sh";
+                    type = "postinstall";
+                    sha256 = "720b5b30a6c585632169dffbe873faa61cadfe658a22e3023becaefb6595f2ee"; 
+                }
+            );
+}

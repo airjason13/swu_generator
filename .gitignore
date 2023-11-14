@@ -1,0 +1,6 @@
+EDB*
+.idea
+__pycache__
+*.tar.gz
+*.swu
+
