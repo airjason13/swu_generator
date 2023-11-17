@@ -25,7 +25,7 @@ software =
                     filename = "run_EDUARTS.sh";
                     path = "/home/eduarts/swupdate_binary/run_EDUARTS.sh";
                     properties = {create-destination="true";}
-                    sha256 = "da5cd53c7229f73e9a88f835cb3e9e886800c97b756b6d99e3d8f7596e58b14b"; 
+                    sha256 = "b2aa2a45c61d65e57febe2e3c04e870d4586359d978fb99946e659c7664ef12d"; 
                 },
                 {
                     filename = "show";

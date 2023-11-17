@@ -6,6 +6,8 @@ import os
 import re
 import sys
 import hashlib
+import time
+
 from global_def import *
 
 
@@ -230,8 +232,10 @@ if __name__ == '__main__':
                    edb_source_code_ver_month, edb_source_code_ver_day,
                    edb_source_code_ver_major, edb_source_code_ver_minor)
 
+    os.sync()
 
-
+    gen_swu_cmd = "./gen_swu_from_materials.sh"
+    os.system(gen_swu_cmd)
 
 
 
