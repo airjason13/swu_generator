@@ -1,7 +1,7 @@
 #!/bin/bash
 #rm *.swu
 #MODE="RSA-PKCS-1.5"
-CONTAINER_VER="2023_5_22_1_0"
+CONTAINER_VER="2023_10_05_02_05"
 PRODUCT_NAME="Eduarts"
 
 #if you use RSA
@@ -24,6 +24,7 @@ FILES="sw-description \
        update.sh \
        system_update_fhd.mp4 \
        run_EDUARTS.sh \
+       only_run_EDUARTS.sh \
        show \
        pre-install.sh \
        post-install.sh "

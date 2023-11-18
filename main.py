@@ -35,6 +35,14 @@ def get_sample_run_eduarts():
     return lines
 
 
+def get_sample_only_run_eduarts():
+    root_dir = os.path.dirname(sys.modules['__main__'].__file__)
+    with open(os.path.join(root_dir, "materials/sample_only_run_EDUARTS.sh"), "r") as f:
+        lines = f.readlines()
+    f.close()
+    return lines
+
+
 def get_file_sha256sum(file_name):
     root_dir = os.path.dirname(sys.modules['__main__'].__file__)
     sha256_hash = hashlib.sha256()
@@ -114,6 +122,19 @@ def rework_run_eduarts_script(tmp_lines : list[str], scode_folder_name):
         f.close()
 
 
+def rework_only_run_eduarts_script(tmp_lines : list[str], scode_folder_name):
+    for n in range(len(tmp_lines)):
+        if "cd /home/eduarts/geany_code" in tmp_lines[n]:
+            tmp_str_list = tmp_lines[n].split("/")
+            old_folder_name = tmp_str_list[len(tmp_str_list) - 1]
+            tmp_lines[n] = tmp_lines[n].replace(old_folder_name, scode_folder_name + '\n')
+
+    with open(os.path.join(root_dir, "materials/only_run_EDUARTS.sh"), "w") as f:
+        f.writelines(tmp_lines)
+        f.flush()
+        f.truncate()
+        f.close()
+
 def get_source_code_version(scode_folder_name):
     ver_year = ""
     ver_month = ""
@@ -142,8 +163,7 @@ def get_source_code_version(scode_folder_name):
     print("ver_year : ", ver_year)
     print("ver_month : ", ver_month)
     print("ver_day : ", ver_day)
-
-    return ver_year, ver_month, ver_day, ver_major, ver_minor
+    return ver_year, ver_month.zfill(2), ver_day.zfill(2), ver_major.zfill(2), ver_minor.zfill(2)
 
 
 def rework_gen_swu(tmp_lines: list[str], update_file_lists, yyyy, mm, dd, major, minor):
@@ -194,10 +214,13 @@ if __name__ == '__main__':
     (edb_source_code_ver_year, edb_source_code_ver_month, edb_source_code_ver_day,
      edb_source_code_ver_major, edb_source_code_ver_minor) = get_source_code_version(source_code_folder_name)
 
-    '''Handle the update.sh & run_EDUARTS.sh'''
+    '''Handle the update.sh & run_EDUARTS.sh & only_run_EDUARTS.sh'''
     rework_update_sh(source_code_folder_name)
     run_eduarts_sh_lines = get_sample_run_eduarts()
     rework_run_eduarts_script(run_eduarts_sh_lines, source_code_folder_name)
+
+    only_run_eduarts_sh_lines = get_sample_only_run_eduarts()
+    rework_only_run_eduarts_script(only_run_eduarts_sh_lines, source_code_folder_name)
 
     ''' Handle sw-description '''
     sw_description_lines = get_sample_sw_description()
@@ -212,6 +235,8 @@ if __name__ == '__main__':
                                                        "materials/system_update_fhd.mp4")
     sw_description_lines = rework_sw_description_lines(sw_description_lines,
                                                        "materials/run_EDUARTS.sh")
+    sw_description_lines = rework_sw_description_lines(sw_description_lines,
+                                                       "materials/only_run_EDUARTS.sh")
     sw_description_lines = rework_sw_description_lines(sw_description_lines,
                                                        "materials/show")
     sw_description_lines = rework_sw_description_lines(sw_description_lines,

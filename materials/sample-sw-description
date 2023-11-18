@@ -28,6 +28,12 @@ software =
                     sha256 = "ce8fa6b2058152ab058d9516b92d5e0e87d902180a5c78976627e8cd085a5117"
                 },
                 {
+                    filename = "only_run_EDUARTS.sh";
+                    path = "/home/eduarts/swupdate_binary/only_run_EDUARTS.sh";
+                    properties = {create-destination="true";}
+                    sha256 = "ce8fa6b2058152ab058d9516b92d5e0e87d902180a5c78976627e8cd085a5117"
+                },
+                {
                     filename = "show";
                     path = "/home/eduarts/swupdate_binary/show";
                     properties = {create-destination="true";}

@@ -7,7 +7,7 @@ software =
                     filename = "EDB21NTA1.tar.gz"; 
                     path = "/home/eduarts/swupdate_binary/EDB21NTA1.tar.gz"; 
                     properties = {create-destination="true";}
-                    sha256 = "1f8d372d3162a4aa1eff4f843329815fbd1c4ba7255306bdf54eea19cabb8762"; 
+                    sha256 = "7b3717fe0bad341757974aec23e3e8a3a808365077f569f810462d789fc8204f"; 
                 },
                 {
                     filename = "update.sh";
@@ -28,22 +28,28 @@ software =
                     sha256 = "b2aa2a45c61d65e57febe2e3c04e870d4586359d978fb99946e659c7664ef12d"; 
                 },
                 {
+                    filename = "only_run_EDUARTS.sh";
+                    path = "/home/eduarts/swupdate_binary/only_run_EDUARTS.sh";
+                    properties = {create-destination="true";}
+                    sha256 = "d9df1bb98d6790fcb09d7683772d478225680a4ced68b6dbe9b4a4866d0cf4d2"; 
+                },
+                {
                     filename = "show";
                     path = "/home/eduarts/swupdate_binary/show";
                     properties = {create-destination="true";}
-                    sha256 = "f0d9d2e1b498994ebd9264606949376bae83fee2b8013ecd831cd422f45086ae"; 
+                    sha256 = "d16cb8c3b3b13ed6965f450c1b499dfd38536fb6a86c82a8a1af625cf0baff77"; 
                 }
             );
             scripts: (
                 {
                     filename = "pre-install.sh";
                     type = "preinstall";
-                    sha256 = "819e3fd57014c1f88a2908661cd3407f0c44458b36f60058ec3c56aa8fa44a19"; 
+                    sha256 = "4c4205ef3bbf83d2ae8ecbb31dc09cae8c72d0c068e78ee4739af9e45f18d0d0"; 
                 },
                 {
                     filename = "post-install.sh";
                     type = "postinstall";
-                    sha256 = "720b5b30a6c585632169dffbe873faa61cadfe658a22e3023becaefb6595f2ee"; 
+                    sha256 = "4e5234d39dc788942342ea06abcad91351655136e7d82ecf980d0c09f2fbf9e4"; 
                 }
             );
 }

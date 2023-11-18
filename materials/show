@@ -1,4 +1,4 @@
 #!/bin/sh
 sudo cp /home/eduarts/swupdate_binary/system_update_fhd.mp4 /home/eduarts/
 export DISPLAY=:0
-ffplay /home/eduarts/system_update_fhd.mp4 &
+ffplay -loop 0 /home/eduarts/system_update_fhd.mp4 &
