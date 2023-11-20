@@ -4,16 +4,16 @@ software =
             hardware-compatibility = [ "0.1", "1.2", "1.3"]; 
             files: (
                 {
-                    filename = "EDB21NTA1.tar.gz"; 
-                    path = "/home/eduarts/swupdate_binary/EDB21NTA1.tar.gz"; 
+                    filename = "EDB21NTA0.tar.gz"; 
+                    path = "/home/eduarts/swupdate_binary/EDB21NTA0.tar.gz"; 
                     properties = {create-destination="true";}
-                    sha256 = "7b3717fe0bad341757974aec23e3e8a3a808365077f569f810462d789fc8204f"; 
+                    sha256 = "57f1962e4411e662b6bedc5e05f93d9ec4c850166ab95f51f636083dcc3ff3cb"; 
                 },
                 {
                     filename = "update.sh";
                     path = "/home/eduarts/swupdate_binary/update.sh";
                     properties = {create-destination="true";}
-                    sha256 = "c8e2b74ef033ea85653005782383b741149e4a4d35df1fbf9c7cdfa10d426efc"; 
+                    sha256 = "d9e8e51084a32286820fc3b08a3b030c34d631bd2cf4de6d79e7522a66021c04"; 
                 },
                 {
                     filename = "system_update_fhd.mp4";
@@ -25,13 +25,13 @@ software =
                     filename = "run_EDUARTS.sh";
                     path = "/home/eduarts/swupdate_binary/run_EDUARTS.sh";
                     properties = {create-destination="true";}
-                    sha256 = "b2aa2a45c61d65e57febe2e3c04e870d4586359d978fb99946e659c7664ef12d"; 
+                    sha256 = "3d93916ff7c4b075c87b1b876e31b9708d16370f8850b81c8f706f15868ab5cd"; 
                 },
                 {
                     filename = "only_run_EDUARTS.sh";
                     path = "/home/eduarts/swupdate_binary/only_run_EDUARTS.sh";
                     properties = {create-destination="true";}
-                    sha256 = "d9df1bb98d6790fcb09d7683772d478225680a4ced68b6dbe9b4a4866d0cf4d2"; 
+                    sha256 = "9d211d3d0e27566ae1deb4f7715740c9eddaa135b932d71bf6a95a1466ce39d7"; 
                 },
                 {
                     filename = "show";

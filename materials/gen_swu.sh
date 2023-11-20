@@ -1,7 +1,7 @@
 #!/bin/bash
 #rm *.swu
 #MODE="RSA-PKCS-1.5"
-CONTAINER_VER="2023_10_05_02_05"
+CONTAINER_VER="2023_10_05_01_00"
 PRODUCT_NAME="Eduarts"
 
 #if you use RSA
@@ -20,7 +20,7 @@ fi
 
 FILES="sw-description \
        sw-description.sig \
-       EDB21NTA1.tar.gz \
+       EDB21NTA0.tar.gz \
        update.sh \
        system_update_fhd.mp4 \
        run_EDUARTS.sh \

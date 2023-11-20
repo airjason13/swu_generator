@@ -1,7 +1,7 @@
 #!/bin/sh
 run_update_file_watcher.sh &
 udiskie & 
-cd /home/eduarts/geany_code/EDB21NTA1
+cd /home/eduarts/geany_code/EDB21NTA0
 export DISPLAY=:0
 sleep 2
 xrandr > /home/eduarts/xrandr_info_1
