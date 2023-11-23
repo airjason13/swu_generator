@@ -4,16 +4,16 @@ software =
             hardware-compatibility = [ "0.1", "1.2", "1.3"]; 
             files: (
                 {
-                    filename = "EDB21NTA0.tar.gz"; 
-                    path = "/home/eduarts/swupdate_binary/EDB21NTA0.tar.gz"; 
+                    filename = "EDB22NTA0.tar.gz"; 
+                    path = "/home/eduarts/swupdate_binary/EDB22NTA0.tar.gz"; 
                     properties = {create-destination="true";}
-                    sha256 = "57f1962e4411e662b6bedc5e05f93d9ec4c850166ab95f51f636083dcc3ff3cb"; 
+                    sha256 = "76caba59734144b7487d723e789a7098d7ef2ebf7d9930bf2edd6e11f1773908"; 
                 },
                 {
                     filename = "update.sh";
                     path = "/home/eduarts/swupdate_binary/update.sh";
                     properties = {create-destination="true";}
-                    sha256 = "d9e8e51084a32286820fc3b08a3b030c34d631bd2cf4de6d79e7522a66021c04"; 
+                    sha256 = "e7c7c92e65803a9b417cce453cd324ebd8c51c1b925b61f81c235f88a7e7fa3b"; 
                 },
                 {
                     filename = "system_update_fhd.mp4";
@@ -25,13 +25,13 @@ software =
                     filename = "run_EDUARTS.sh";
                     path = "/home/eduarts/swupdate_binary/run_EDUARTS.sh";
                     properties = {create-destination="true";}
-                    sha256 = "3d93916ff7c4b075c87b1b876e31b9708d16370f8850b81c8f706f15868ab5cd"; 
+                    sha256 = "a568269187eb480bbe44781fba779d24bf56c99bd4baaccf39a04c2f9d47899f"; 
                 },
                 {
                     filename = "only_run_EDUARTS.sh";
                     path = "/home/eduarts/swupdate_binary/only_run_EDUARTS.sh";
                     properties = {create-destination="true";}
-                    sha256 = "9d211d3d0e27566ae1deb4f7715740c9eddaa135b932d71bf6a95a1466ce39d7"; 
+                    sha256 = "4babdbd5a0a9826cd65f6aebbf50fd8aa10801886ac45bc45c8c033392e469c6"; 
                 },
                 {
                     filename = "show";
@@ -49,7 +49,7 @@ software =
                 {
                     filename = "post-install.sh";
                     type = "postinstall";
-                    sha256 = "4e5234d39dc788942342ea06abcad91351655136e7d82ecf980d0c09f2fbf9e4"; 
+                    sha256 = "03d70cd261e0eef2aaf8e1d5ce1a0ac860cba63fc9e56779314b511f201daa5a"; 
                 }
             );
 }

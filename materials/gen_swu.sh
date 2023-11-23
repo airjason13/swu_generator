@@ -20,7 +20,7 @@ fi
 
 FILES="sw-description \
        sw-description.sig \
-       EDB21NTA0.tar.gz \
+       EDB22NTA0.tar.gz \
        update.sh \
        system_update_fhd.mp4 \
        run_EDUARTS.sh \
