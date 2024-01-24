@@ -4,6 +4,8 @@ import socket
 import fcntl
 import struct
 
+VERSION = '20240124_01'
+
 
 def get_ip_address(ifname):
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
