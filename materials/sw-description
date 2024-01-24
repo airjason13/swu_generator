@@ -7,7 +7,7 @@ software =
                     filename = "EDB22NTA0.tar.gz"; 
                     path = "/home/eduarts/swupdate_binary/EDB22NTA0.tar.gz"; 
                     properties = {create-destination="true";}
-                    sha256 = "76caba59734144b7487d723e789a7098d7ef2ebf7d9930bf2edd6e11f1773908"; 
+                    sha256 = "f715c41e1a701a83dd1d4352670ca05f96c6aa5ecdacb154115523c57833b2da"; 
                 },
                 {
                     filename = "update.sh";

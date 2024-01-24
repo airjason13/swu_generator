@@ -2,7 +2,7 @@
 #rm *.swu
 #MODE="RSA-PKCS-1.5"
 CONTAINER_VER="2023_10_05_01_00"
-PRODUCT_NAME="Eduarts"
+PRODUCT_NAME="Eudarts"
 
 #if you use RSA
 if [ x"$MODE" == "xRSA-PKCS-1.5" ]; then

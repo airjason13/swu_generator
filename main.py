@@ -4,9 +4,11 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import os
 import re
+import shutil
 import sys
 import hashlib
 import time
+from gen_json import *
 
 from global_def import *
 
@@ -79,7 +81,7 @@ def rework_sw_description_lines(tmp_lines, rework_file_name, is_source_code=Fals
                 m = tmp_lines[n].split("/")
                 old_fname = m[len(m) - 1]
                 print("old_fname:", old_fname)
-                tmp_lines[n] = tmp_lines[n].replace(old_fname,  real_file_name + '"; \n')
+                tmp_lines[n] = tmp_lines[n].replace(old_fname, real_file_name + '"; \n')
         else:
             if real_file_name in tmp_lines[n]:
                 b_update_sha256sum = True
@@ -108,7 +110,7 @@ def rework_update_sh(scode_folder_name):
         f.close()
 
 
-def rework_run_eduarts_script(tmp_lines : list[str], scode_folder_name):
+def rework_run_eduarts_script(tmp_lines: list[str], scode_folder_name):
     for n in range(len(tmp_lines)):
         if "cd /home/eduarts/geany_code" in tmp_lines[n]:
             tmp_str_list = tmp_lines[n].split("/")
@@ -122,7 +124,7 @@ def rework_run_eduarts_script(tmp_lines : list[str], scode_folder_name):
         f.close()
 
 
-def rework_only_run_eduarts_script(tmp_lines : list[str], scode_folder_name):
+def rework_only_run_eduarts_script(tmp_lines: list[str], scode_folder_name):
     for n in range(len(tmp_lines)):
         if "cd /home/eduarts/geany_code" in tmp_lines[n]:
             tmp_str_list = tmp_lines[n].split("/")
@@ -135,6 +137,7 @@ def rework_only_run_eduarts_script(tmp_lines : list[str], scode_folder_name):
         f.truncate()
         f.close()
 
+
 def get_source_code_version(scode_folder_name):
     ver_year = ""
     ver_month = ""
@@ -144,9 +147,9 @@ def get_source_code_version(scode_folder_name):
 
     print("scode_folder_name :", scode_folder_name)
     print("scode_folder_name :", os.path.join(root_dir, scode_folder_name + "/CONST.py"))
-    with open(os.path.join(root_dir, scode_folder_name + "/CONST.py" ), "r") as f:
+    with open(os.path.join(root_dir, scode_folder_name + "/CONST.py"), "r") as f:
         lines = f.readlines()
-        for line in lines :
+        for line in lines:
             if line.startswith("VER_MAJOR"):
                 ver_major = line.split(" = ")[1].strip("\n")
             if line.startswith("VER_MINOR"):
@@ -262,6 +265,24 @@ if __name__ == '__main__':
     gen_swu_cmd = "./gen_swu_from_materials.sh"
     os.system(gen_swu_cmd)
 
+    json_file_name = "{}_{}_{}_{}_{}_{}.json".format(COMPANY_NAME, edb_source_code_ver_year,
+                                                  edb_source_code_ver_month, edb_source_code_ver_day,
+                                                  edb_source_code_ver_major, edb_source_code_ver_minor)
+    swu_file_name = "{}_{}_{}_{}_{}_{}.swu".format(COMPANY_NAME, edb_source_code_ver_year,
+                                                edb_source_code_ver_month, edb_source_code_ver_day,
+                                                edb_source_code_ver_major, edb_source_code_ver_minor)
 
+    swu_file_uri = "{}/{}".format(SWU_INSTALL_FOLDER, swu_file_name)
 
+    os.sync()
+    shutil.copy(root_dir + '/materials/' + swu_file_name, swu_file_uri)
+    os.sync()
+    swu_file_md5 = hashlib.md5(open(swu_file_uri, "rb").read()).hexdigest()
+    print('swu_file_md5 : %s' % swu_file_md5)
 
+    gen_json_of_swu_info(swu_info_json_file_name=json_file_name, swu_file_name=swu_file_name,
+                         swu_file_uri=swu_file_uri, swu_file_md5=swu_file_md5,
+                         supported_soc_board=SUPPORT_SOC_BOARD_ANY, supported_mcu_board=SUPPORT_MCU_BOARD_ANY,
+                         supported_sensor_board=SUPPORT_SENSOR_BOARD_ANY,
+                         supported_soc_sw_version= SUPPORT_SOC_SW_VERSION_ANY,
+                         supported_mcu_sw_version=SUPPORT_MCU_SW_VERSION_ANY)
