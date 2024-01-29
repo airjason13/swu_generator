@@ -4,7 +4,7 @@ import socket
 import fcntl
 import struct
 
-VERSION = '20240124_01'
+VERSION = '20240129_01'
 
 
 def get_ip_address(ifname):
@@ -21,9 +21,9 @@ try:
     if get_ip_address('ppp0'):
         SWU_INSTALL_FOLDER = '/home/eduarts/ota_data_v1.0.0'
     else:
-        SWU_INSTALL_FOLDER = '/home/{}'.format(os.getlogin())
+        SWU_INSTALL_FOLDER = '/home/{}/test_ota_data_v1.0.0'.format(os.getlogin())
 except Exception as e:
-    SWU_INSTALL_FOLDER = '/home/{}'.format(os.getlogin())
+    SWU_INSTALL_FOLDER = '/home/{}/test_ota_data_v1.0.0'.format(os.getlogin())
 
 SOURCE_CODE_FOLDER_PREFIX = "EDB"
 COMPANY_NAME = "Eudarts"
