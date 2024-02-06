@@ -203,6 +203,7 @@ def get_update_files_list(sw_desc_lines: list[str]):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+
     '''Handle the source code'''
     '''Find the source first'''
     source_code_folder_name = None
