@@ -9,6 +9,7 @@ import sys
 import hashlib
 import time
 from gen_json import *
+from gen_update_info_json import get_update_jsons_list
 
 from global_def import *
 
@@ -286,3 +287,5 @@ if __name__ == '__main__':
                          supported_sensor_board=SUPPORT_SENSOR_BOARD_ANY,
                          supported_soc_sw_version= SUPPORT_SOC_SW_VERSION_ANY,
                          supported_mcu_sw_version=SUPPORT_MCU_SW_VERSION_ANY)
+
+    get_update_jsons_list()
