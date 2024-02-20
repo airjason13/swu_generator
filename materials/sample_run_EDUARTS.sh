@@ -1,6 +1,11 @@
 #!/bin/sh
+sudo rfkill unblock wifi
 run_update_file_watcher.sh &
-udiskie & 
+udiskie &
+connect_ovpn_server.sh &
+sleep 10
+edb_check
+
 cd /home/eduarts/geany_code/EDB21NTA0
 export DISPLAY=:0
 sleep 2
