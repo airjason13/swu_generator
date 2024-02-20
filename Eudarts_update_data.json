@@ -1,0 +1,18 @@
+{
+  "least_swu_file_json": [
+    {
+      "name": "/home/venom/test_ota_data_v1.0.0/Eudarts_2023_10_07_01_00.json",
+      "md5": "3db15d8b79689d236fac9f58fbc9f503"
+    }
+  ],
+  "old_ver_swu_file_jsons": [
+    {
+      "name": "/home/venom/test_ota_data_v1.0.0/Eudarts_2023_10_06_01_00.json",
+      "md5": "93e5f5fdf29c0f03208a78592b5ac94c"
+    },
+    {
+      "name": "/home/venom/test_ota_data_v1.0.0/Eudarts_2023_10_05_01_00.json",
+      "md5": "b4696b28510b450d77671d5edfe17199"
+    }
+  ]
+}
